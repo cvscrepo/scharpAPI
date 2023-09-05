@@ -5,21 +5,24 @@ namespace ProyectoEF.Models
 {
     public class Task
     {
-        [Key]
+        //Data Anotations       
+        //[Key]
         public Guid Id { get; set; }
         
-        [ForeignKey("CategorieId")]
-        public Guid CategorieId { get; set; }
 
-        [Required]
-        [MaxLength(200)]
+        //[ForeignKey("CategoryId")]
+        public Guid CategoryId { get; set; }
+
+        //[Required]
+        //[MaxLength(200)]
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime CreatedDate { get; set;}
+        public DateTime DateOfCompletion { get; set;}
         public Priority PriorityTask { get; set; }
         public virtual Category Category { get; set; }
 
-        [NotMapped]
+        //[NotMapped]
         public string Summary { get; set; }
     }
 
